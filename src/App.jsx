@@ -7,6 +7,15 @@ export default function App() {
     name: "",
     email: "",
     phone: "",
+    school: "",
+    major: "",
+    startDate: "",
+    endDate: "",
+    company: "",
+    position: "",
+    responsibility: "",
+    startJob: "",
+    endJob: "",
   });
 
   return (
