@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/form.css";
 
 export default function Form({ setFormData }) {
   const [userInput, setUserInput] = useState({
@@ -47,10 +48,11 @@ export default function Form({ setFormData }) {
   };
 
   return (
-    <div>
+    <aside className="forms">
+      <h1>CV Info</h1>
       {index === 0 && !formOne && (
         <div>
-          <h1>General</h1>
+          <h2>General</h2>
           <p>Name: {userInput.name}</p>
           <p>Email: {userInput.email}</p>
           <p>Phone Number: {userInput.phone}</p>
@@ -59,10 +61,10 @@ export default function Form({ setFormData }) {
       )}
 
       {index === 0 && formOne && (
-        <div>
-          <h1>General</h1>
-          <form onSubmit={handleSubmit}>
-            <label for="name">Name: </label>
+        <div className="form-align">
+          <h2>General</h2>
+          <form onSubmit={handleSubmit} className="form-data">
+            <label for="name">Name </label>
             <input
               value={userInput.name}
               name="name"
@@ -71,7 +73,7 @@ export default function Form({ setFormData }) {
               placeholder="John Smith"
               required
             />
-            <label for="email">Email: </label>
+            <label for="email">Email </label>
             <input
               value={userInput.email}
               name="email"
@@ -80,7 +82,7 @@ export default function Form({ setFormData }) {
               placeholder="john@mail.com"
               required
             />
-            <label for="phone">Phone Number: </label>
+            <label for="phone">Phone Number </label>
             <input
               value={userInput.phone}
               name="phone"
@@ -97,7 +99,7 @@ export default function Form({ setFormData }) {
 
       {index === 1 && !formTwo && (
         <div>
-          <h1>Education</h1>
+          <h2>Education</h2>
           <p>University: {userInput.school}</p>
           <p>Major: {userInput.major}</p>
           <p>Start Date: {userInput.startDate}</p>
@@ -107,10 +109,10 @@ export default function Form({ setFormData }) {
       )}
 
       {index === 1 && formTwo && (
-        <div>
-          <h1>Education</h1>
+        <div className="form-align">
+          <h2>Education</h2>
           <label for="school">University: </label>
-          <form onSubmit={handleSubmit}>
+          <form className="form-data" onSubmit={handleSubmit}>
             <input
               value={userInput.school}
               name="school"
@@ -153,7 +155,7 @@ export default function Form({ setFormData }) {
 
       {index === 2 && !formThree && (
         <div>
-          <h1>Practical</h1>
+          <h2>Practical</h2>
           <p>Company: {userInput.company}</p>
           <p>Position: {userInput.position}</p>
           <p>Responsibilities: {userInput.responsibility}</p>
@@ -164,9 +166,9 @@ export default function Form({ setFormData }) {
       )}
 
       {index === 2 && formThree && (
-        <div>
-          <h1>Pratical</h1>
-          <form onSubmit={handleSubmit}>
+        <div className="form-align">
+          <h2>Pratical</h2>
+          <form className="form-data" onSubmit={handleSubmit}>
             <label for="company">Company: </label>
             <input
               value={userInput.company}
@@ -216,12 +218,14 @@ export default function Form({ setFormData }) {
           </form>
         </div>
       )}
-      <button onClick={() => setIndex(index - 1)} disabled={index === 0}>
-        Previous
-      </button>
-      <button onClick={() => setIndex(index + 1)} disabled={index === 2}>
-        Next
-      </button>
-    </div>
+      <div className="switch">
+        <button onClick={() => setIndex(index - 1)} disabled={index === 0}>
+          Previous
+        </button>
+        <button onClick={() => setIndex(index + 1)} disabled={index === 2}>
+          Next
+        </button>
+      </div>
+    </aside>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "./components/form";
 import Display from "./components/Display";
+import "./styles/app.css";
 
 export default function App() {
   const [formData, setFormData] = useState({
@@ -19,9 +20,9 @@ export default function App() {
   });
 
   return (
-    <>
+    <div className="view">
       <Form setFormData={setFormData} />
       <Display formData={formData} />
-    </>
+    </div>
   );
 }
