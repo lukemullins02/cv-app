@@ -1,3 +1,7 @@
 export default function Display({ formData }) {
-  return <h1>{formData.name}</h1>;
+  return (
+    <div>
+      <h1>{formData.name}</h1>
+    </div>
+  );
 }

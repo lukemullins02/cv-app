@@ -20,8 +20,8 @@ export default function App() {
 
   return (
     <>
-      <Display formData={formData} />
       <Form setFormData={setFormData} />
+      <Display formData={formData} />
     </>
   );
 }
