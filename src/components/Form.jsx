@@ -257,7 +257,7 @@ function CvToPDF() {
   return (
     <div className="form-align">
       <div>
-        <h2>Download CV</h2>
+        <h2 className="center-dwn">Download CV</h2>
       </div>
       <div className="export">
         <button onClick={download}>Download (PDF)</button>

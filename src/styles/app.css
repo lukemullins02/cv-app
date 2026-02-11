@@ -8,7 +8,7 @@
 
 .view {
   display: grid;
-  grid-template-columns: 2fr 4fr;
+  grid-template-columns: 3fr 4fr;
   height: 100vh;
 }
 
