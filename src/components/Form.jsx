@@ -51,7 +51,7 @@ export default function Form({ setFormData }) {
     <aside className="forms">
       <h1>CV Info</h1>
       {index === 0 && !formOne && (
-        <div>
+        <div className="edit-align">
           <h2>General</h2>
           <p>Name: {userInput.name}</p>
           <p>Email: {userInput.email}</p>
@@ -62,7 +62,7 @@ export default function Form({ setFormData }) {
 
       {index === 0 && formOne && (
         <div className="form-align">
-          <h2>General</h2>
+          <h2>Personal</h2>
           <form onSubmit={handleSubmit} className="form-data">
             <label for="name">Name </label>
             <input
@@ -98,7 +98,7 @@ export default function Form({ setFormData }) {
       )}
 
       {index === 1 && !formTwo && (
-        <div>
+        <div className="edit-align">
           <h2>Education</h2>
           <p>University: {userInput.school}</p>
           <p>Major: {userInput.major}</p>
@@ -154,8 +154,8 @@ export default function Form({ setFormData }) {
       )}
 
       {index === 2 && !formThree && (
-        <div>
-          <h2>Practical</h2>
+        <div className="edit-align">
+          <h2>Professional</h2>
           <p>Company: {userInput.company}</p>
           <p>Position: {userInput.position}</p>
           <p>Responsibilities: {userInput.responsibility}</p>

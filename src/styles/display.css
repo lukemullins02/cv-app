@@ -1,0 +1,68 @@
+.cv-bg {
+  background-color: #f1f3f8;
+}
+
+.cv {
+  background-color: white;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 8px 24px #0000000a;
+  margin-bottom: 2rem;
+}
+
+.cv > h1 {
+  text-align: center;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.personal > h2 {
+  border-bottom: solid 1px black;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.education > h2 {
+  border-bottom: solid 1px black;
+}
+
+.professional {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.professional > h2 {
+  border-bottom: solid 1px black;
+}
+
+.cv > * {
+  min-width: 0;
+}
+
+.personal p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.professional p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.education p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

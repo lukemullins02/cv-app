@@ -95,6 +95,29 @@ h6 {
   border-radius: 5px;
   overflow-y: auto;
   box-shadow: 0 8px 24px #0000000a;
+  font-size: 1.1rem;
+}
+
+.edit-align {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 2rem 3rem 2rem 3rem;
+  box-shadow: 0 8px 24px #0000000a;
+  border-radius: 5px;
+  gap: 15px;
+  font-size: 1.1rem;
+  max-width: 435px;
+}
+
+.edit-align > * {
+  min-width: 0;
+}
+
+.edit-align p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .forms > div > h2 {
