@@ -1,17 +1,26 @@
 .cv-bg {
   background-color: #f1f3f8;
+  justify-content: center;
+  overflow: auto;
 }
 
 .cv {
   background-color: white;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   margin-right: 2rem;
   padding: 25px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   box-shadow: 0 8px 24px #0000000a;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#cv {
+  width: 794px;
+  height: 1123px;
+  transform: scale(0.8);
+  transform-origin: top center;
 }
 
 .cv > h1 {
@@ -26,6 +35,7 @@
 
 .personal > h2 {
   border-bottom: solid 1px black;
+  padding-bottom: 5px;
 }
 
 .education {
@@ -36,6 +46,7 @@
 
 .education > h2 {
   border-bottom: solid 1px black;
+  padding-bottom: 5px;
 }
 
 .professional {
@@ -46,6 +57,7 @@
 
 .professional > h2 {
   border-bottom: solid 1px black;
+  padding-bottom: 5px;
 }
 
 .cv > * {

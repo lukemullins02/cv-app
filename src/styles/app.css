@@ -11,3 +11,7 @@
   grid-template-columns: 2fr 4fr;
   height: 100vh;
 }
+
+button {
+  cursor: pointer;
+}

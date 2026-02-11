@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../styles/form.css";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 export default function Form({ setFormData }) {
   const [userInput, setUserInput] = useState({
@@ -52,7 +54,7 @@ export default function Form({ setFormData }) {
       <h1>CV Info</h1>
       {index === 0 && !formOne && (
         <div className="edit-align">
-          <h2>General</h2>
+          <h2>Personal</h2>
           <p>Name: {userInput.name}</p>
           <p>Email: {userInput.email}</p>
           <p>Phone Number: {userInput.phone}</p>
@@ -101,7 +103,7 @@ export default function Form({ setFormData }) {
         <div className="edit-align">
           <h2>Education</h2>
           <p>University: {userInput.school}</p>
-          <p>Major: {userInput.major}</p>
+          <p>Degree: {userInput.major}</p>
           <p>Start Date: {userInput.startDate}</p>
           <p>End Date: {userInput.endDate}</p>
           <button onClick={() => setFormTwo(true)}>Edit</button>
@@ -121,7 +123,7 @@ export default function Form({ setFormData }) {
               placeholder="UGA"
               required
             />
-            <label for="major">Major: </label>
+            <label for="major">Degree: </label>
             <input
               value={userInput.major}
               name="major"
@@ -167,7 +169,7 @@ export default function Form({ setFormData }) {
 
       {index === 2 && formThree && (
         <div className="form-align">
-          <h2>Pratical</h2>
+          <h2>Professional</h2>
           <form className="form-data" onSubmit={handleSubmit}>
             <label for="company">Company: </label>
             <input
@@ -188,14 +190,17 @@ export default function Form({ setFormData }) {
               required
             />
             <label for="responsibility">Responsibilities: </label>
-            <input
+            <textarea
               value={userInput.responsibility}
               name="responsibility"
+              rows={5}
+              cols={30}
               onChange={handleChange}
               type="text"
-              placeholder="Worked forklift"
               required
-            />
+            >
+              Worked forklift
+            </textarea>
             <label for="startJob">Start Date: </label>
             <input
               value={userInput.startJob}
@@ -218,14 +223,45 @@ export default function Form({ setFormData }) {
           </form>
         </div>
       )}
+
+      {index === 3 && <CvToPDF />}
+
       <div className="switch">
         <button onClick={() => setIndex(index - 1)} disabled={index === 0}>
           Previous
         </button>
-        <button onClick={() => setIndex(index + 1)} disabled={index === 2}>
+        <button onClick={() => setIndex(index + 1)} disabled={index === 3}>
           Next
         </button>
       </div>
     </aside>
+  );
+}
+
+function CvToPDF() {
+  const download = () => {
+    const cv = document.getElementById("cv");
+    if (!cv) return;
+
+    html2canvas(cv, { scale: 2 }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // maintain aspect ratio
+
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.save("cv.pdf");
+    });
+  };
+  return (
+    <div className="form-align">
+      <div>
+        <h2>Download CV</h2>
+      </div>
+      <div className="export">
+        <button onClick={download}>Download (PDF)</button>
+      </div>
+    </div>
   );
 }

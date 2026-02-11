@@ -93,9 +93,11 @@ h6 {
   background-color: #ffffff;
   padding: 2rem 3rem 2rem 3rem;
   border-radius: 5px;
-  overflow-y: auto;
   box-shadow: 0 8px 24px #0000000a;
   font-size: 1.1rem;
+  max-width: 435px;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
 }
 
 .edit-align {
@@ -109,6 +111,17 @@ h6 {
   gap: 15px;
   font-size: 1.1rem;
   max-width: 435px;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+textarea {
+  resize: none;
+  padding-left: 5px;
+}
+
+.export {
+  text-align: center;
 }
 
 .edit-align > * {
